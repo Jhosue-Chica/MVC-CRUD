@@ -1,0 +1,63 @@
+﻿@model U2Lab2.Models.Cliente
+
+@{
+    ViewData["Title"] = "Detalles del Cliente";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center">@ViewData["Title"]</h1>
+            <hr />
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h4>Información del Cliente</h4>
+            <dl class="row mt-4">
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.NombreCli)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.NombreCli)
+                </dd>
+
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.CedulaCli)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.CedulaCli)
+                </dd>
+
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.CorreoCli)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.CorreoCli)
+                </dd>
+
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.FechaNacimientoCli)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.FechaNacimientoCli)
+                </dd>
+
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.ImagenUrlCli)
+                </dt>
+                <dd class="col-sm-9">
+                    <img src="@Model.ImagenUrlCli" alt="Imagen de @Model.NombreCli" style="width:150px;height:auto;" />
+                </dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12 text-center">
+            <a asp-action="Edit" asp-route-id="@Model?.IdCli" class="btn btn-primary btn-lg">Editar</a>
+            <a asp-action="Index" class="btn btn-secondary btn-lg">Volver a la Lista</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+﻿@model U2Lab2.Models.Cliente
+
+@{
+    ViewData["Title"] = "Crear Cliente";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center">@ViewData["Title"]</h1>
+            <hr />
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h4>Detalles del Cliente</h4>
+            <form asp-action="Create" class="mt-4">
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+                <div class="form-group">
+                    <label asp-for="NombreCli" class="control-label"></label>
+                    <input asp-for="NombreCli" class="form-control" placeholder="Ingrese el nombre del cliente" />
+                    <span asp-validation-for="NombreCli" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CedulaCli" class="control-label"></label>
+                    <input asp-for="CedulaCli" class="form-control" placeholder="Ingrese la cédula del cliente" />
+                    <span asp-validation-for="CedulaCli" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CorreoCli" class="control-label"></label>
+                    <input asp-for="CorreoCli" class="form-control" placeholder="Ingrese el correo del cliente" />
+                    <span asp-validation-for="CorreoCli" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="FechaNacimientoCli" class="control-label"></label>
+                    <input asp-for="FechaNacimientoCli" class="form-control" type="date" />
+                    <span asp-validation-for="FechaNacimientoCli" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ImagenUrlCli" class="control-label"></label>
+                    <input asp-for="ImagenUrlCli" class="form-control" placeholder="Ingrese la URL de la imagen" />
+                    <span asp-validation-for="ImagenUrlCli" class="text-danger"></span>
+                </div>
+                <div class="form-group text-center">
+                    <input type="submit" value="Crear" class="btn btn-primary btn-lg" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12 text-center">
+            <a asp-action="Index" class="btn btn-secondary btn-lg">Volver a la Lista</a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
